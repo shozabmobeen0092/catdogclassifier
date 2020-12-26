@@ -1,0 +1,41 @@
+#Steps we are following to deploy our app on Heoku
+	Step 1: our main file should be app.py
+	Step 2: Our Flask Instance name should be app
+	app:app
+	Step 3: Create a new file and name it as Procfile with no extension
+		and P should be capital
+	Step 4: In Procfile we are supposed to mention the commands which will be used by the
+		cloud instance at the time of deployment
+
+#Initializing the local GIT
+	Step 1: git init
+	Step 2: git add .
+	Step 3: git commit -m "initial commit"
+#Steps to Push ur Application from local to Heroku Cloud
+	Step 4: heroku login
+	Step 5: heroku create
+	Step 6: git remote -v
+	Step 7: git push origin master
+
+####################################################################################################################
+
+# Steps we are following to deploy our app on AWS Elastic BeanStalk
+
+	Step 1: Your main Python file should be application.py
+	Step 2: Your flask object name which we have defined in application.py should also be application.
+	Step 3: .ebignore is responsible to hold the name of those files which we do not want to push on a cloud
+	Step 4: Create a requirements.txt file
+		command: pip freeze > requirements.txt
+	Step 5: Create a folder in ur application and name it as .ebextensions
+	Step 6: Inside .ebextensions we have to create a new file name it as python.config
+	Step 7: In python.config we are suppose to mention the below commands
+		option_settings:
+			"aws:elasticbeanstalk:container:python":
+			  WSGIPath: application:application
+---------------------------------------------------------------------
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin remoteurl
+
+git push origin master
